@@ -1,7 +1,7 @@
 class Restaurant < ApplicationRecord
-  belongs_to :people, class_name: 'User',
-                      foreign_key: 'restaurant_id',
-                      inverse_of: :eaterys
+  belongs_to :user, class_name: 'User',
+                    inverse_of: :restaurants
   has_many :reservations, dependent: :destroy
-  has_many :users, through: :reservations
+  has_many :persons, through: :reservations,
+                     source: :user
 end

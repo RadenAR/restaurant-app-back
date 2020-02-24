@@ -2,11 +2,11 @@
 
 class RestaurantSerializer < ActiveModel::Serializer
   attributes :id, :name, :address, :rating, :cuisine_type, :healthy, :editable
-  has_one :user
+  has_one :user, inverse_of: :restaurants
   has_many :reservations
-  has_many :people
+  has_many :persons, through: :reservations
 
   def editable
-    scope == object.people
+    scope == object.user
   end
 end
