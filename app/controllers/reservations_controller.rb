@@ -1,6 +1,5 @@
 class ReservationsController < ProtectedController
   before_action :set_reservation, only: %i[show update destroy]
-  before_action :authenticate
 
   # GET /reservations
   def index
@@ -44,7 +43,7 @@ class ReservationsController < ProtectedController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_reservation
-      @reservation = current_user.restaurants.find(params[:id])
+      @reservation = current_user.reservations.find(params[:id])
     end
 
     # Only allow a trusted parameter "white list" through.

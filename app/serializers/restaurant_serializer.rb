@@ -7,6 +7,6 @@ class RestaurantSerializer < ActiveModel::Serializer
   has_many :people
 
   def editable
-    scope == object.user
+    scope == object.people
   end
 end
