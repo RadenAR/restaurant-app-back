@@ -85,7 +85,7 @@ Users -|-< Reservations >-|- Restaurants
 -   As a user, I want to be able to see all reservations.
 -   As a user, I want to be able to delete a reservation.
 
-## Possible future additions
+## Possible future additions/ Unsolved problems
 
 -   Link to a 3rd party API to make actual reservations
 -   Link to a 3rd party maps application (maybe google maps) to show location of restaurant
